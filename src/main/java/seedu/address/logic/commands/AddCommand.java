@@ -28,7 +28,7 @@ public class AddCommand extends Command {
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_COMPANY + "Apple "
             + PREFIX_LINK + "https://www.apple.com/careers/sg/students.html "
-            + PREFIX_APPLIED_DATE + "30-10-2022 ";
+            + PREFIX_APPLIED_DATE + "2022-10-30";
 
     public static final String MESSAGE_SUCCESS = "New internship added: %1$s";
     public static final String MESSAGE_DUPLICATE_INTERNSHIP = "This internship already exists in the address book";

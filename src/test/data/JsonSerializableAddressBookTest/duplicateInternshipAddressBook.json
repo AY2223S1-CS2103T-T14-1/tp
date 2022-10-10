@@ -1,16 +1,16 @@
 {
   "internships": [ {
-    "name": "Alice Pauline",
-    "phone": "94351253",
-    "email": "alice@example.com",
+    "name": "Google",
+    "phone": "https://careers.google.com/students",
+    "email": "careers@google.com",
     "applicationStatus" : "applied",
-    "address": "123, Jurong West Ave 6, #08-111",
+    "address": "2022-10-30",
     "tagged": [ "friends" ]
   }, {
-    "name": "Alice Pauline",
-    "phone": "94351253",
-    "email": "pauline@example.com",
+    "name": "Google",
+    "phone": "https://careers.google.com/students",
+    "email": "careers@google.com",
     "applicationStatus" : "applied",
-    "address": "4th street"
+    "address": "2022-10-30"
   } ]
 }

@@ -2,52 +2,52 @@
   "_comment": "AddressBook save file which contains the same Person values as in TypicalPersons#getTypicalAddressBook()",
   "internships" : [ {
     "name" : "Alibaba",
-    "phone" : "94351253",
+    "phone" : "https://careers.alibaba.com",
     "email" : "careers@alibaba.com",
     "applicationStatus" : "applied",
-    "address" : "123, Jurong West Ave 6, #08-111",
+    "address" : "2022-10-30",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Binance",
-    "phone" : "98765432",
+    "phone" : "https://www.binance.com/en/careers",
     "email" : "careers@binance.com",
     "applicationStatus" : "applied",
-    "address" : "311, Clementi Ave 2, #02-25",
+    "address" : "2022-10-20",
     "tagged" : [ "owesMoney", "friends" ]
   }, {
     "name" : "Citadel",
-    "phone" : "95352563",
+    "phone" : "https://www.citadel.com/careers",
     "email" : "careers@citadel.com",
     "applicationStatus" : "applied",
-    "address" : "wall street",
+    "address" : "2022-10-25",
     "tagged" : [ ]
   }, {
     "name" : "Dell",
-    "phone" : "87652533",
+    "phone" : "https://jobs.dell.com/internships",
     "email" : "careers@dell.com",
     "applicationStatus" : "applied",
-    "address" : "10th street",
+    "address" : "2022-11-05",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Ebay",
-    "phone" : "9482224",
+    "phone" : "https://careers.ebayinc.com/",
     "email" : "careers@ebay.com",
     "applicationStatus" : "applied",
-    "address" : "michegan ave",
+    "address" : "2022-11-10",
     "tagged" : [ ]
   }, {
     "name" : "Facebook",
-    "phone" : "9482427",
+    "phone" : "https://metacareers.com/careerprograms/students",
     "email" : "careers@facebook.com",
     "applicationStatus" : "applied",
-    "address" : "little tokyo",
+    "address" : "2022-11-15",
     "tagged" : [ ]
   }, {
     "name" : "Goldman Sachs",
-    "phone" : "9482442",
+    "phone" : "https://www.goldmansachs.com/careers/students/programs/",
     "email" : "careers@goldmansachs.com",
     "applicationStatus" : "applied",
-    "address" : "4th street",
+    "address" : "2022-11-20",
     "tagged" : [ ]
   } ]
 }

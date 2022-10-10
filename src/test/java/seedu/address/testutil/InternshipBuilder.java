@@ -17,11 +17,11 @@ import seedu.address.model.util.SampleDataUtil;
  */
 public class InternshipBuilder {
 
-    public static final String DEFAULT_NAME = "Google";
-    public static final String DEFAULT_PHONE = "85355255";
+    public static final String DEFAULT_COMPANY = "Google";
+    public static final String DEFAULT_LINK = "8https://careers.google.com/students";
     public static final String DEFAULT_EMAIL = "careers@google.com";
     public static final ApplicationStatus DEFAULT_APPLICATION_STATUS = ApplicationStatus.Applied;
-    public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
+    public static final String DEFAULT_APPLIED_DATE = "2022-10-30";
 
     private Company company;
     private Link link;
@@ -34,11 +34,11 @@ public class InternshipBuilder {
      * Creates a {@code InternshipBuilder} with the default details.
      */
     public InternshipBuilder() {
-        company = new Company(DEFAULT_NAME);
-        link = new Link(DEFAULT_PHONE);
+        company = new Company(DEFAULT_COMPANY);
+        link = new Link(DEFAULT_LINK);
         email = new Email(DEFAULT_EMAIL);
         applicationStatus = DEFAULT_APPLICATION_STATUS;
-        appliedDate = new AppliedDate(DEFAULT_ADDRESS);
+        appliedDate = new AppliedDate(DEFAULT_APPLIED_DATE);
         tags = new HashSet<>();
     }
 
@@ -57,8 +57,8 @@ public class InternshipBuilder {
     /**
      * Sets the {@code Company} of the {@code Internship} that we are building.
      */
-    public InternshipBuilder withName(String name) {
-        this.company = new Company(name);
+    public InternshipBuilder withCompany(String company) {
+        this.company = new Company(company);
         return this;
     }
 
@@ -73,16 +73,16 @@ public class InternshipBuilder {
     /**
      * Sets the {@code AppliedDate} of the {@code Internship} that we are building.
      */
-    public InternshipBuilder withAddress(String address) {
-        this.appliedDate = new AppliedDate(address);
+    public InternshipBuilder withAppliedDate(String appliedDate) {
+        this.appliedDate = new AppliedDate(appliedDate);
         return this;
     }
 
     /**
      * Sets the {@code Link} of the {@code Internship} that we are building.
      */
-    public InternshipBuilder withPhone(String phone) {
-        this.link = new Link(phone);
+    public InternshipBuilder withLink(String link) {
+        this.link = new Link(link);
         return this;
     }
 

@@ -26,34 +26,34 @@ import seedu.address.testutil.EditInternshipDescriptorBuilder;
  */
 public class CommandTestUtil {
 
-    public static final String VALID_NAME_GOOGLE = "Google";
-    public static final String VALID_NAME_TIKTOK = "Tiktok";
-    public static final String VALID_PHONE_GOOGLE = "11111111";
-    public static final String VALID_PHONE_TIKTOK = "22222222";
+    public static final String VALID_COMPANY_GOOGLE = "Google";
+    public static final String VALID_COMPANY_TIKTOK = "Tiktok";
+    public static final String VALID_LINK_GOOGLE = "https://careers.google.com/students";
+    public static final String VALID_LINK_TIKTOK = "https://careers.tiktok.com/campus";
     public static final String VALID_EMAIL_GOOGLE = "careers@google.com";
     public static final String VALID_EMAIL_TIKTOK = "careers@tiktok.com";
     public static final String VALID_APPLICATION_STATUS_GOOGLE = "applied";
     public static final String VALID_APPLICATION_STATUS_TIKTOK = "applied";
-    public static final String VALID_ADDRESS_GOOGLE = "Block 312, Amy Street 1";
-    public static final String VALID_ADDRESS_TIKTOK = "Block 123, Bobby Street 3";
+    public static final String VALID_APPLIED_DATE_GOOGLE = "2022-10-30";
+    public static final String VALID_APPLIED_DATE_TIKTOK = "2022-11-30";
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
 
-    public static final String NAME_DESC_GOOGLE = " " + PREFIX_COMPANY + VALID_NAME_GOOGLE;
-    public static final String NAME_DESC_TIKTOK = " " + PREFIX_COMPANY + VALID_NAME_TIKTOK;
-    public static final String PHONE_DESC_GOOGLE = " " + PREFIX_LINK + VALID_PHONE_GOOGLE;
-    public static final String PHONE_DESC_TIKTOK = " " + PREFIX_LINK + VALID_PHONE_TIKTOK;
+    public static final String COMPANY_DESC_GOOGLE = " " + PREFIX_COMPANY + VALID_COMPANY_GOOGLE;
+    public static final String COMPANY_DESC_TIKTOK = " " + PREFIX_COMPANY + VALID_COMPANY_TIKTOK;
+    public static final String LINK_DESC_GOOGLE = " " + PREFIX_LINK + VALID_LINK_GOOGLE;
+    public static final String LINK_DESC_TIKTOK = " " + PREFIX_LINK + VALID_LINK_TIKTOK;
     public static final String EMAIL_DESC_GOOGLE = " " + PREFIX_EMAIL + VALID_EMAIL_GOOGLE;
     public static final String EMAIL_DESC_TIKTOK = " " + PREFIX_EMAIL + VALID_EMAIL_TIKTOK;
-    public static final String ADDRESS_DESC_GOOGLE = " " + PREFIX_APPLIED_DATE + VALID_ADDRESS_GOOGLE;
-    public static final String ADDRESS_DESC_TIKTOK = " " + PREFIX_APPLIED_DATE + VALID_ADDRESS_TIKTOK;
+    public static final String APPLIED_DATE_DESC_GOOGLE = " " + PREFIX_APPLIED_DATE + VALID_APPLIED_DATE_GOOGLE;
+    public static final String APPLIED_DATE_DESC_TIKTOK = " " + PREFIX_APPLIED_DATE + VALID_APPLIED_DATE_TIKTOK;
     public static final String TAG_DESC_FRIEND = " " + PREFIX_TAG + VALID_TAG_FRIEND;
     public static final String TAG_DESC_HUSBAND = " " + PREFIX_TAG + VALID_TAG_HUSBAND;
 
-    public static final String INVALID_NAME_DESC = " " + PREFIX_COMPANY + "James&"; // '&' not allowed in names
-    public static final String INVALID_PHONE_DESC = " " + PREFIX_LINK + "911a"; // 'a' not allowed in phones
+    public static final String INVALID_COMPANY_DESC = " " + PREFIX_COMPANY + " "; // whitespace string not allowed for company
+    public static final String INVALID_LINK_DESC = " " + PREFIX_LINK + "91 1a"; // ' ' not allowed in links
     public static final String INVALID_EMAIL_DESC = " " + PREFIX_EMAIL + "bob!yahoo"; // missing '@' symbol
-    public static final String INVALID_ADDRESS_DESC = " " + PREFIX_APPLIED_DATE; // empty string not allowed for addresses
+    public static final String INVALID_APPLIED_DATE_DESC = " " + PREFIX_APPLIED_DATE; // empty string not allowed for appliedDate
     public static final String INVALID_TAG_DESC = " " + PREFIX_TAG + "hubby*"; // '*' not allowed in tags
 
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
@@ -63,11 +63,11 @@ public class CommandTestUtil {
     public static final EditCommand.EditInternshipDescriptor DESC_TIKTOK;
 
     static {
-        DESC_GOOGLE = new EditInternshipDescriptorBuilder().withName(VALID_NAME_GOOGLE)
-                .withPhone(VALID_PHONE_GOOGLE).withEmail(VALID_EMAIL_GOOGLE).withAddress(VALID_ADDRESS_GOOGLE)
+        DESC_GOOGLE = new EditInternshipDescriptorBuilder().withName(VALID_COMPANY_GOOGLE)
+                .withPhone(VALID_LINK_GOOGLE).withEmail(VALID_EMAIL_GOOGLE).withAddress(VALID_APPLIED_DATE_GOOGLE)
                 .withTags(VALID_TAG_FRIEND).build();
-        DESC_TIKTOK = new EditInternshipDescriptorBuilder().withName(VALID_NAME_TIKTOK)
-                .withPhone(VALID_PHONE_TIKTOK).withEmail(VALID_EMAIL_TIKTOK).withAddress(VALID_ADDRESS_TIKTOK)
+        DESC_TIKTOK = new EditInternshipDescriptorBuilder().withName(VALID_COMPANY_TIKTOK)
+                .withPhone(VALID_LINK_TIKTOK).withEmail(VALID_EMAIL_TIKTOK).withAddress(VALID_APPLIED_DATE_TIKTOK)
                 .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
     }
 

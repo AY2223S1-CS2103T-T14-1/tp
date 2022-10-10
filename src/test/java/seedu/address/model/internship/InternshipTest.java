@@ -2,10 +2,10 @@ package seedu.address.model.internship;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_TIKTOK;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_APPLIED_DATE_TIKTOK;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_TIKTOK;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_TIKTOK;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_TIKTOK;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_COMPANY_TIKTOK;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LINK_TIKTOK;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalInternships.ALIBABA;
@@ -33,21 +33,21 @@ public class InternshipTest {
 
         // same name, all other attributes different -> returns true
         Internship editedAlibaba =
-                new InternshipBuilder(ALIBABA).withPhone(VALID_PHONE_TIKTOK).withEmail(VALID_EMAIL_TIKTOK)
-                .withAddress(VALID_ADDRESS_TIKTOK).withTags(VALID_TAG_HUSBAND).build();
+                new InternshipBuilder(ALIBABA).withLink(VALID_LINK_TIKTOK).withEmail(VALID_EMAIL_TIKTOK)
+                .withAppliedDate(VALID_APPLIED_DATE_TIKTOK).withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALIBABA.isSameInternship(editedAlibaba));
 
         // different name, all other attributes same -> returns false
-        editedAlibaba = new InternshipBuilder(ALIBABA).withName(VALID_NAME_TIKTOK).build();
+        editedAlibaba = new InternshipBuilder(ALIBABA).withCompany(VALID_COMPANY_TIKTOK).build();
         assertFalse(ALIBABA.isSameInternship(editedAlibaba));
 
         // name differs in case, all other attributes same -> returns false
-        Internship editedTiktok = new InternshipBuilder(TIKTOK).withName(VALID_NAME_TIKTOK.toLowerCase()).build();
+        Internship editedTiktok = new InternshipBuilder(TIKTOK).withCompany(VALID_COMPANY_TIKTOK.toLowerCase()).build();
         assertFalse(TIKTOK.isSameInternship(editedTiktok));
 
         // name has trailing spaces, all other attributes same -> returns false
-        String nameWithTrailingSpaces = VALID_NAME_TIKTOK + " ";
-        editedTiktok = new InternshipBuilder(TIKTOK).withName(nameWithTrailingSpaces).build();
+        String nameWithTrailingSpaces = VALID_COMPANY_TIKTOK + " ";
+        editedTiktok = new InternshipBuilder(TIKTOK).withCompany(nameWithTrailingSpaces).build();
         assertFalse(TIKTOK.isSameInternship(editedTiktok));
     }
 
@@ -70,11 +70,11 @@ public class InternshipTest {
         assertFalse(ALIBABA.equals(TIKTOK));
 
         // different name -> returns false
-        Internship editedAlice = new InternshipBuilder(ALIBABA).withName(VALID_NAME_TIKTOK).build();
+        Internship editedAlice = new InternshipBuilder(ALIBABA).withCompany(VALID_COMPANY_TIKTOK).build();
         assertFalse(ALIBABA.equals(editedAlice));
 
         // different phone -> returns false
-        editedAlice = new InternshipBuilder(ALIBABA).withPhone(VALID_PHONE_TIKTOK).build();
+        editedAlice = new InternshipBuilder(ALIBABA).withLink(VALID_LINK_TIKTOK).build();
         assertFalse(ALIBABA.equals(editedAlice));
 
         // different email -> returns false
@@ -82,7 +82,7 @@ public class InternshipTest {
         assertFalse(ALIBABA.equals(editedAlice));
 
         // different address -> returns false
-        editedAlice = new InternshipBuilder(ALIBABA).withAddress(VALID_ADDRESS_TIKTOK).build();
+        editedAlice = new InternshipBuilder(ALIBABA).withAppliedDate(VALID_APPLIED_DATE_TIKTOK).build();
         assertFalse(ALIBABA.equals(editedAlice));
 
         // different tags -> returns false

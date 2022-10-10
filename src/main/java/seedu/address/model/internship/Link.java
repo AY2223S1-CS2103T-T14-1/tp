@@ -25,10 +25,11 @@ public class Link {
     }
 
     /**
-     * Returns true if a given string is a valid phone number.
+     * Returns true if a given string is a valid link.
      */
     public static boolean isValidLink(String test) {
-        return test.equals(test.replaceAll("\\s+",""));
+        String temp = test.replaceAll("\\s", "");
+        return test.equals(temp);
     }
 
     @Override

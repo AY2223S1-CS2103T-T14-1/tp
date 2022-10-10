@@ -14,23 +14,23 @@ public class AppliedDateTest {
     }
 
     @Test
-    public void constructor_invalidAddress_throwsIllegalArgumentException() {
-        String invalidAddress = "";
-        assertThrows(IllegalArgumentException.class, () -> new AppliedDate(invalidAddress));
+    public void constructor_invalidAppliedDate_throwsIllegalArgumentException() {
+        String invalidAppliedDate = "";
+        assertThrows(IllegalArgumentException.class, () -> new AppliedDate(invalidAppliedDate));
     }
 
     @Test
-    public void isValidAddress() {
-        // null address
+    public void isValidAppliedDate() {
+        // null appliedDate
         assertThrows(NullPointerException.class, () -> AppliedDate.isValidAppliedDate(null));
 
-        // invalid addresses
+        // invalid appliedDates
         assertFalse(AppliedDate.isValidAppliedDate("")); // empty string
         assertFalse(AppliedDate.isValidAppliedDate(" ")); // spaces only
 
-        // valid addresses
-        assertTrue(AppliedDate.isValidAppliedDate("Blk 456, Den Road, #01-355"));
-        assertTrue(AppliedDate.isValidAppliedDate("-")); // one character
-        assertTrue(AppliedDate.isValidAppliedDate("Leng Inc; 1234 Market St; San Francisco CA 2349879; USA")); // long address
+        // valid appliedDates
+        assertTrue(AppliedDate.isValidAppliedDate("2022-10-30"));
+        assertTrue(AppliedDate.isValidAppliedDate("2022-11-30"));
+        assertTrue(AppliedDate.isValidAppliedDate("2022-12-30"));
     }
 }
