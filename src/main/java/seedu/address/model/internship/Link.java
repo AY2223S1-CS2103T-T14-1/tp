@@ -10,9 +10,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Link {
 
 
-    public static final String MESSAGE_CONSTRAINTS =
-            "Constraint to be updated";
-    public static final String VALIDATION_REGEX = "\\d{3,}";
+    public static final String MESSAGE_CONSTRAINTS = "Links should not contain any whitespace";
     public final String value;
 
     /**
@@ -30,7 +28,7 @@ public class Link {
      * Returns true if a given string is a valid phone number.
      */
     public static boolean isValidLink(String test) {
-        return test.matches(VALIDATION_REGEX);
+        return test.equals(test.replaceAll("\\s+",""));
     }
 
     @Override

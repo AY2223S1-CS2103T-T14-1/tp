@@ -5,18 +5,14 @@ package seedu.address.model.internship;
  */
 public class Description {
 
-    private String description;
+    private final String value;
 
     public Description(String description) {
-        this.description = description;
-    }
-
-    public String getDescription() {
-        return description;
+        this.value = description;
     }
 
     @Override
     public String toString() {
-        return description;
+        return value;
     }
 }

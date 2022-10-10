@@ -30,7 +30,7 @@ public class Internship {
      */
     public Internship(Company company, Link link, Email email, ApplicationStatus applicationStatus,
                       AppliedDate appliedDate, Set<Tag> tags) {
-        requireAllNonNull(company, link, email, appliedDate, tags);
+        requireAllNonNull(company, tags);
         this.company = company;
         this.link = link;
         this.email = email;

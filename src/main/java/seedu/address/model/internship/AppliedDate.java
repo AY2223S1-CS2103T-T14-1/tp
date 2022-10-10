@@ -1,5 +1,9 @@
 package seedu.address.model.internship;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
@@ -9,37 +13,36 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class AppliedDate {
 
-    public static final String MESSAGE_CONSTRAINTS = "Applied Dates can take any values, and it should not be blank";
-
-    /*
-     * The first character of the applied date must not be a whitespace,
-     * otherwise " " (a blank string) becomes a valid input.
-     */
-    public static final String VALIDATION_REGEX = "[^\\s].*";
+    public static final String MESSAGE_CONSTRAINTS = "AppliedDate must be a parsable LocalDate";
 
     public final String value;
 
     /**
      * Constructs an {@code AppliedDate}.
      *
-     * @param appliedDate A valid appliedDate.
+     * @param value A valid appliedDate.
      */
-    public AppliedDate(String appliedDate) {
-        requireNonNull(appliedDate);
-        checkArgument(isValidAppliedDate(appliedDate), MESSAGE_CONSTRAINTS);
-        value = appliedDate;
+    public AppliedDate(String value) {
+        requireNonNull(value);
+        checkArgument(isValidAppliedDate(value), MESSAGE_CONSTRAINTS);
+        this.value = value;
     }
 
     /**
      * Returns true if a given string is a valid email.
      */
     public static boolean isValidAppliedDate(String test) {
-        return test.matches(VALIDATION_REGEX);
+        try {
+            LocalDate.parse(test);
+        } catch (DateTimeParseException e) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
-        return value;
+        return LocalDate.parse(value).format(DateTimeFormatter.ofPattern("MMM dd yyyy"));
     }
 
     @Override

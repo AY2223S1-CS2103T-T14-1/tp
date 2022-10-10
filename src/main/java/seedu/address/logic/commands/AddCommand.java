@@ -21,17 +21,14 @@ public class AddCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds an internship to the address book. "
             + "Parameters: "
             + PREFIX_COMPANY + "NAME "
-            + PREFIX_LINK + "PHONE "
-            + PREFIX_EMAIL + "EMAIL "
-            + PREFIX_APPLIED_DATE + "ADDRESS "
+            + "[" + PREFIX_LINK + "LINK] "
+            + "[" + PREFIX_APPLIED_DATE + "APPLIED_DATE] "
+            + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
-            + PREFIX_COMPANY + "John Doe "
-            + PREFIX_LINK + "98765432 "
-            + PREFIX_EMAIL + "johnd@example.com "
-            + PREFIX_APPLIED_DATE + "311, Clementi Ave 2, #02-25 "
-            + PREFIX_TAG + "friends "
-            + PREFIX_TAG + "owesMoney";
+            + PREFIX_COMPANY + "Apple "
+            + PREFIX_LINK + "https://www.apple.com/careers/sg/students.html "
+            + PREFIX_APPLIED_DATE + "30-10-2022 ";
 
     public static final String MESSAGE_SUCCESS = "New internship added: %1$s";
     public static final String MESSAGE_DUPLICATE_INTERNSHIP = "This internship already exists in the address book";
