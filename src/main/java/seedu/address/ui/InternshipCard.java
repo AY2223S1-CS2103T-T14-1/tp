@@ -51,7 +51,7 @@ public class InternshipCard extends UiPart<Region> {
         this.internship = internship;
         id.setText(displayedIndex + ". ");
         name.setText(internship.getCompany().company);
-        phone.setText(internship.getPhone().value);
+        phone.setText(internship.getLink().value);
         address.setText(internship.getAddress().value);
         applicationStatus.setText(internship.getApplicationStatus().toString());
         email.setText(internship.getEmail().value);

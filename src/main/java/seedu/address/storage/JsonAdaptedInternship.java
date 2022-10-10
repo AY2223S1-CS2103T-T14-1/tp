@@ -15,7 +15,7 @@ import seedu.address.model.internship.ApplicationStatus;
 import seedu.address.model.internship.Email;
 import seedu.address.model.internship.Internship;
 import seedu.address.model.internship.Company;
-import seedu.address.model.internship.Phone;
+import seedu.address.model.internship.Link;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -56,7 +56,7 @@ class JsonAdaptedInternship {
      */
     public JsonAdaptedInternship(Internship source) {
         name = source.getCompany().company;
-        phone = source.getPhone().value;
+        phone = source.getLink().value;
         email = source.getEmail().value;
         applicationStatus = source.getApplicationStatus().toString().toLowerCase();
         address = source.getAddress().value;
@@ -79,18 +79,18 @@ class JsonAdaptedInternship {
         if (name == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Company.class.getSimpleName()));
         }
-        if (!Company.isValidName(name)) {
+        if (!Company.isValidCompany(name)) {
             throw new IllegalValueException(Company.MESSAGE_CONSTRAINTS);
         }
         final Company modelCompany = new Company(name);
 
         if (phone == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Link.class.getSimpleName()));
         }
-        if (!Phone.isValidPhone(phone)) {
-            throw new IllegalValueException(Phone.MESSAGE_CONSTRAINTS);
+        if (!Link.isValidLink(phone)) {
+            throw new IllegalValueException(Link.MESSAGE_CONSTRAINTS);
         }
-        final Phone modelPhone = new Phone(phone);
+        final Link modelLink = new Link(phone);
 
         if (email == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Email.class.getSimpleName()));
@@ -115,7 +115,7 @@ class JsonAdaptedInternship {
         final Address modelAddress = new Address(address);
 
         final Set<Tag> modelTags = new HashSet<>(internshipTags);
-        return new Internship(modelCompany, modelPhone, modelEmail, modelApplicationStatus, modelAddress, modelTags);
+        return new Internship(modelCompany, modelLink, modelEmail, modelApplicationStatus, modelAddress, modelTags);
     }
 
 }

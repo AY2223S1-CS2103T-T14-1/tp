@@ -4,13 +4,13 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents an Internship's name in the address book.
- * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}
+ * Represents an Internship's company in the address book.
+ * Guarantees: immutable; is valid as declared in {@link #isValidCompany(String)}
  */
 public class Company {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Names should only contain alphanumeric characters and spaces, and it should not be blank";
+            "Company should only contain alphanumeric characters and spaces, and it should not be blank";
 
     /*
      * The first character of the address must not be a whitespace,
@@ -23,18 +23,18 @@ public class Company {
     /**
      * Constructs a {@code Company}.
      *
-     * @param name A valid name.
+     * @param company A valid company.
      */
-    public Company(String name) {
-        requireNonNull(name);
-        checkArgument(isValidName(name), MESSAGE_CONSTRAINTS);
-        company = name;
+    public Company(String company) {
+        requireNonNull(company);
+        checkArgument(isValidCompany(company), MESSAGE_CONSTRAINTS);
+        this.company = company;
     }
 
     /**
-     * Returns true if a given string is a valid name.
+     * Returns true if a given string is a valid company.
      */
-    public static boolean isValidName(String test) {
+    public static boolean isValidCompany(String test) {
         return test.matches(VALIDATION_REGEX);
     }
 
