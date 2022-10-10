@@ -6,9 +6,9 @@ import java.util.stream.Stream;
 
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.model.internship.AppliedDate;
+import seedu.address.model.internship.Company;
 import seedu.address.model.internship.Email;
 import seedu.address.model.internship.Internship;
-import seedu.address.model.internship.Company;
 import seedu.address.model.internship.Link;
 import seedu.address.model.tag.Tag;
 

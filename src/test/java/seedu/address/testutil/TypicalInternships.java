@@ -2,10 +2,10 @@ package seedu.address.testutil;
 
 import static seedu.address.logic.commands.CommandTestUtil.VALID_APPLIED_DATE_GOOGLE;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_APPLIED_DATE_TIKTOK;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_GOOGLE;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_TIKTOK;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_COMPANY_GOOGLE;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_COMPANY_TIKTOK;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_GOOGLE;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_TIKTOK;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_LINK_GOOGLE;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_LINK_TIKTOK;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
@@ -25,35 +25,44 @@ import seedu.address.model.internship.Internship;
 public class TypicalInternships {
 
     public static final Internship ALIBABA = new InternshipBuilder().withCompany("Alibaba")
-            .withLink("https://careers.alibaba.com").withApplicationStatus(ApplicationStatus.Applied)
+            .withLink("https://careers.alibaba.com")
+            .withApplicationStatus(ApplicationStatus.Applied)
             .withAppliedDate("2022-10-30").withEmail("careers@alibaba.com").withTags("friends").build();
     public static final Internship BINANCE = new InternshipBuilder().withCompany("Binance")
-            .withLink("https://www.binance.com/en/careers").withApplicationStatus(ApplicationStatus.Applied)
+            .withLink("https://www.binance.com/en/careers")
+            .withApplicationStatus(ApplicationStatus.Applied)
             .withAppliedDate("2022-10-20").withEmail("careers@binance.com")
             .withTags("owesMoney", "friends").build();
     public static final Internship CITADEL = new InternshipBuilder().withCompany("Citadel")
-            .withLink("https://www.citadel.com/careers").withApplicationStatus(ApplicationStatus.Applied)
+            .withLink("https://www.citadel.com/careers")
+            .withApplicationStatus(ApplicationStatus.Applied)
             .withAppliedDate("2022-10-25").withEmail("careers@citadel.com").build();
     public static final Internship DELL = new InternshipBuilder().withCompany("Dell")
-            .withLink("https://jobs.dell.com/internships").withApplicationStatus(ApplicationStatus.Applied)
+            .withLink("https://jobs.dell.com/internships")
+            .withApplicationStatus(ApplicationStatus.Applied)
             .withAppliedDate("2022-11-05").withEmail("careers@dell.com")
             .withTags("friends").build();
     public static final Internship EBAY = new InternshipBuilder().withCompany("Ebay")
-            .withLink("https://careers.ebayinc.com/").withApplicationStatus(ApplicationStatus.Applied)
+            .withLink("https://careers.ebayinc.com/")
+            .withApplicationStatus(ApplicationStatus.Applied)
             .withAppliedDate("2022-11-10").withEmail("careers@ebay.com").build();
     public static final Internship FACEBOOK = new InternshipBuilder().withCompany("Facebook")
-            .withLink("https://metacareers.com/careerprograms/students").withApplicationStatus(ApplicationStatus.Applied)
+            .withLink("https://metacareers.com/careerprograms/students")
+            .withApplicationStatus(ApplicationStatus.Applied)
             .withAppliedDate("2022-11-15").withEmail("careers@facebook.com").build();
     public static final Internship GOLDMAN = new InternshipBuilder().withCompany("Goldman Sachs")
-            .withLink("https://www.goldmansachs.com/careers/students/programs/").withApplicationStatus(ApplicationStatus.Applied)
+            .withLink("https://www.goldmansachs.com/careers/students/programs/")
+            .withApplicationStatus(ApplicationStatus.Applied)
             .withAppliedDate("2022-11-20").withEmail("careers@goldmansachs.com").build();
 
     // Manually added
     public static final Internship HUAWEI = new InternshipBuilder().withCompany("Huawei")
-            .withLink("https://career.huawei.com/reccampportal/portal5/index.html").withApplicationStatus(ApplicationStatus.Applied)
+            .withLink("https://career.huawei.com/reccampportal/portal5/index.html")
+            .withApplicationStatus(ApplicationStatus.Applied)
             .withAppliedDate("2022-11-25").withEmail("careers@huawei.com").build();
     public static final Internship INDEED = new InternshipBuilder().withCompany("Indeed")
-            .withLink("https://sg.indeed.com/cmp/Indeed").withApplicationStatus(ApplicationStatus.Applied)
+            .withLink("https://sg.indeed.com/cmp/Indeed")
+            .withApplicationStatus(ApplicationStatus.Applied)
             .withAppliedDate("2022-11-30").withEmail("careers@indeed.com").build();
 
     // Manually added - Internship's details found in {@code CommandTestUtil}

@@ -43,7 +43,8 @@ public class UniqueInternshipListTest {
     public void contains_internshipWithSameIdentityFieldsInList_returnsTrue() {
         uniqueInternshipList.add(ALIBABA);
         Internship editedAlibaba =
-                new InternshipBuilder(ALIBABA).withAppliedDate(VALID_APPLIED_DATE_TIKTOK).withTags(VALID_TAG_HUSBAND).build();
+                new InternshipBuilder(ALIBABA).withAppliedDate(VALID_APPLIED_DATE_TIKTOK)
+                        .withTags(VALID_TAG_HUSBAND).build();
         assertTrue(uniqueInternshipList.contains(editedAlibaba));
     }
 
@@ -86,7 +87,8 @@ public class UniqueInternshipListTest {
     public void setInternship_editedInternshipHasSameIdentity_success() {
         uniqueInternshipList.add(ALIBABA);
         Internship editedAlibaba =
-                new InternshipBuilder(ALIBABA).withAppliedDate(VALID_APPLIED_DATE_TIKTOK).withTags(VALID_TAG_HUSBAND).build();
+                new InternshipBuilder(ALIBABA).withAppliedDate(VALID_APPLIED_DATE_TIKTOK)
+                        .withTags(VALID_TAG_HUSBAND).build();
         uniqueInternshipList.setInternship(ALIBABA, editedAlibaba);
         UniqueInternshipList expectedUniqueInternshipList = new UniqueInternshipList();
         expectedUniqueInternshipList.add(editedAlibaba);

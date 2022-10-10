@@ -47,7 +47,8 @@ public class AddressBookTest {
     public void resetData_withDuplicateInternships_throwsDuplicateInternshipException() {
         // Two internships with the same identity fields
         Internship editedAlibaba =
-                new InternshipBuilder(ALIBABA).withAppliedDate(VALID_APPLIED_DATE_TIKTOK).withTags(VALID_TAG_HUSBAND).build();
+                new InternshipBuilder(ALIBABA).withAppliedDate(VALID_APPLIED_DATE_TIKTOK)
+                        .withTags(VALID_TAG_HUSBAND).build();
         List<Internship> newInternships = Arrays.asList(ALIBABA, editedAlibaba);
         AddressBookStub newData = new AddressBookStub(newInternships);
 

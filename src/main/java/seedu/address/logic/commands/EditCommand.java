@@ -2,8 +2,8 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_APPLIED_DATE;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_COMPANY;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_INTERNSHIPS;
@@ -19,11 +19,11 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.internship.AppliedDate;
 import seedu.address.model.internship.ApplicationStatus;
+import seedu.address.model.internship.AppliedDate;
+import seedu.address.model.internship.Company;
 import seedu.address.model.internship.Email;
 import seedu.address.model.internship.Internship;
-import seedu.address.model.internship.Company;
 import seedu.address.model.internship.Link;
 import seedu.address.model.tag.Tag;
 
@@ -98,7 +98,8 @@ public class EditCommand extends Command {
         Company updatedCompany = editInternshipDescriptor.getCompany().orElse(internshipToEdit.getCompany());
         Link updatedLink = editInternshipDescriptor.getLink().orElse(internshipToEdit.getLink());
         Email updatedEmail = editInternshipDescriptor.getEmail().orElse(internshipToEdit.getEmail());
-        AppliedDate updatedAppliedDate = editInternshipDescriptor.getAppliedDate().orElse(internshipToEdit.getAppliedDate());
+        AppliedDate updatedAppliedDate = editInternshipDescriptor.getAppliedDate()
+                .orElse(internshipToEdit.getAppliedDate());
         ApplicationStatus updatedApplicationStatus =
                 editInternshipDescriptor.getApplicationStatus().orElse(internshipToEdit.getApplicationStatus());
         Set<Tag> updatedTags = editInternshipDescriptor.getTags().orElse(internshipToEdit.getTags());

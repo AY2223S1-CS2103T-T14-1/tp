@@ -125,7 +125,8 @@ public class EditCommandTest {
     @Test
     public void execute_invalidInternshipIndexUnfilteredList_failure() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredInternshipList().size() + 1);
-        EditInternshipDescriptor descriptor = new EditInternshipDescriptorBuilder().withName(VALID_COMPANY_TIKTOK).build();
+        EditInternshipDescriptor descriptor = new EditInternshipDescriptorBuilder()
+                .withName(VALID_COMPANY_TIKTOK).build();
         EditCommand editCommand = new EditCommand(outOfBoundIndex, descriptor);
 
         assertCommandFailure(editCommand, model, Messages.MESSAGE_INVALID_INTERNSHIP_DISPLAYED_INDEX);

@@ -10,11 +10,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.internship.AppliedDate;
 import seedu.address.model.internship.ApplicationStatus;
+import seedu.address.model.internship.AppliedDate;
+import seedu.address.model.internship.Company;
 import seedu.address.model.internship.Email;
 import seedu.address.model.internship.Internship;
-import seedu.address.model.internship.Company;
 import seedu.address.model.internship.Link;
 import seedu.address.model.tag.Tag;
 
@@ -107,7 +107,8 @@ class JsonAdaptedInternship {
         final ApplicationStatus modelApplicationStatus = ApplicationStatus.parse(applicationStatus);
 
         if (address == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, AppliedDate.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    AppliedDate.class.getSimpleName()));
         }
         if (!AppliedDate.isValidAppliedDate(address)) {
             throw new IllegalValueException(AppliedDate.MESSAGE_CONSTRAINTS);

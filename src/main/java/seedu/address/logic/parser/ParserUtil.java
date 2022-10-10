@@ -9,10 +9,10 @@ import java.util.Set;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.internship.AppliedDate;
 import seedu.address.model.internship.ApplicationStatus;
-import seedu.address.model.internship.Email;
+import seedu.address.model.internship.AppliedDate;
 import seedu.address.model.internship.Company;
+import seedu.address.model.internship.Email;
 import seedu.address.model.internship.Link;
 import seedu.address.model.tag.Tag;
 
