@@ -14,7 +14,7 @@ import seedu.address.model.internship.Address;
 import seedu.address.model.internship.ApplicationStatus;
 import seedu.address.model.internship.Email;
 import seedu.address.model.internship.Internship;
-import seedu.address.model.internship.Name;
+import seedu.address.model.internship.Company;
 import seedu.address.model.internship.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -55,7 +55,7 @@ class JsonAdaptedInternship {
      * Converts a given {@code Internship} into this class for Jackson use.
      */
     public JsonAdaptedInternship(Internship source) {
-        name = source.getName().fullName;
+        name = source.getCompany().company;
         phone = source.getPhone().value;
         email = source.getEmail().value;
         applicationStatus = source.getApplicationStatus().toString().toLowerCase();
@@ -77,12 +77,12 @@ class JsonAdaptedInternship {
         }
 
         if (name == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Company.class.getSimpleName()));
         }
-        if (!Name.isValidName(name)) {
-            throw new IllegalValueException(Name.MESSAGE_CONSTRAINTS);
+        if (!Company.isValidName(name)) {
+            throw new IllegalValueException(Company.MESSAGE_CONSTRAINTS);
         }
-        final Name modelName = new Name(name);
+        final Company modelCompany = new Company(name);
 
         if (phone == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName()));
@@ -115,7 +115,7 @@ class JsonAdaptedInternship {
         final Address modelAddress = new Address(address);
 
         final Set<Tag> modelTags = new HashSet<>(internshipTags);
-        return new Internship(modelName, modelPhone, modelEmail, modelApplicationStatus, modelAddress, modelTags);
+        return new Internship(modelCompany, modelPhone, modelEmail, modelApplicationStatus, modelAddress, modelTags);
     }
 
 }

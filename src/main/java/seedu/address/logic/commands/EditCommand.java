@@ -3,7 +3,7 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_COMPANY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_INTERNSHIPS;
@@ -23,7 +23,7 @@ import seedu.address.model.internship.Address;
 import seedu.address.model.internship.ApplicationStatus;
 import seedu.address.model.internship.Email;
 import seedu.address.model.internship.Internship;
-import seedu.address.model.internship.Name;
+import seedu.address.model.internship.Company;
 import seedu.address.model.internship.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -38,7 +38,7 @@ public class EditCommand extends Command {
             + "by the index number used in the displayed internship list. "
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_NAME + "NAME] "
+            + "[" + PREFIX_COMPANY + "NAME] "
             + "[" + PREFIX_PHONE + "PHONE] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_ADDRESS + "ADDRESS] "
@@ -95,7 +95,7 @@ public class EditCommand extends Command {
                                                      EditInternshipDescriptor editInternshipDescriptor) {
         assert internshipToEdit != null;
 
-        Name updatedName = editInternshipDescriptor.getName().orElse(internshipToEdit.getName());
+        Company updatedCompany = editInternshipDescriptor.getCompany().orElse(internshipToEdit.getCompany());
         Phone updatedPhone = editInternshipDescriptor.getPhone().orElse(internshipToEdit.getPhone());
         Email updatedEmail = editInternshipDescriptor.getEmail().orElse(internshipToEdit.getEmail());
         Address updatedAddress = editInternshipDescriptor.getAddress().orElse(internshipToEdit.getAddress());
@@ -103,7 +103,7 @@ public class EditCommand extends Command {
                 editInternshipDescriptor.getApplicationStatus().orElse(internshipToEdit.getApplicationStatus());
         Set<Tag> updatedTags = editInternshipDescriptor.getTags().orElse(internshipToEdit.getTags());
 
-        return new Internship(updatedName, updatedPhone, updatedEmail, updatedApplicationStatus, updatedAddress,
+        return new Internship(updatedCompany, updatedPhone, updatedEmail, updatedApplicationStatus, updatedAddress,
                 updatedTags);
     }
 
@@ -130,7 +130,7 @@ public class EditCommand extends Command {
      * corresponding field value of the internship.
      */
     public static class EditInternshipDescriptor {
-        private Name name;
+        private Company company;
         private Phone phone;
         private Email email;
         private Address address;
@@ -144,7 +144,7 @@ public class EditCommand extends Command {
          * A defensive copy of {@code tags} is used internally.
          */
         public EditInternshipDescriptor(EditInternshipDescriptor toCopy) {
-            setName(toCopy.name);
+            setCompany(toCopy.company);
             setPhone(toCopy.phone);
             setEmail(toCopy.email);
             setAddress(toCopy.address);
@@ -156,15 +156,15 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, address, tags);
+            return CollectionUtil.isAnyNonNull(company, phone, email, address, tags);
         }
 
-        public void setName(Name name) {
-            this.name = name;
+        public void setCompany(Company company) {
+            this.company = company;
         }
 
-        public Optional<Name> getName() {
-            return Optional.ofNullable(name);
+        public Optional<Company> getCompany() {
+            return Optional.ofNullable(company);
         }
 
         public void setPhone(Phone phone) {
@@ -231,7 +231,7 @@ public class EditCommand extends Command {
             // state check
             EditInternshipDescriptor e = (EditInternshipDescriptor) other;
 
-            return getName().equals(e.getName())
+            return getCompany().equals(e.getCompany())
                     && getPhone().equals(e.getPhone())
                     && getEmail().equals(e.getEmail())
                     && getAddress().equals(e.getAddress())

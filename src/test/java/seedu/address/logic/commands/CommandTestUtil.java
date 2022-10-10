@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_COMPANY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -39,8 +39,8 @@ public class CommandTestUtil {
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
 
-    public static final String NAME_DESC_GOOGLE = " " + PREFIX_NAME + VALID_NAME_GOOGLE;
-    public static final String NAME_DESC_TIKTOK = " " + PREFIX_NAME + VALID_NAME_TIKTOK;
+    public static final String NAME_DESC_GOOGLE = " " + PREFIX_COMPANY + VALID_NAME_GOOGLE;
+    public static final String NAME_DESC_TIKTOK = " " + PREFIX_COMPANY + VALID_NAME_TIKTOK;
     public static final String PHONE_DESC_GOOGLE = " " + PREFIX_PHONE + VALID_PHONE_GOOGLE;
     public static final String PHONE_DESC_TIKTOK = " " + PREFIX_PHONE + VALID_PHONE_TIKTOK;
     public static final String EMAIL_DESC_GOOGLE = " " + PREFIX_EMAIL + VALID_EMAIL_GOOGLE;
@@ -50,7 +50,7 @@ public class CommandTestUtil {
     public static final String TAG_DESC_FRIEND = " " + PREFIX_TAG + VALID_TAG_FRIEND;
     public static final String TAG_DESC_HUSBAND = " " + PREFIX_TAG + VALID_TAG_HUSBAND;
 
-    public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
+    public static final String INVALID_NAME_DESC = " " + PREFIX_COMPANY + "James&"; // '&' not allowed in names
     public static final String INVALID_PHONE_DESC = " " + PREFIX_PHONE + "911a"; // 'a' not allowed in phones
     public static final String INVALID_EMAIL_DESC = " " + PREFIX_EMAIL + "bob!yahoo"; // missing '@' symbol
     public static final String INVALID_ADDRESS_DESC = " " + PREFIX_ADDRESS; // empty string not allowed for addresses
@@ -121,7 +121,7 @@ public class CommandTestUtil {
         assertTrue(targetIndex.getZeroBased() < model.getFilteredInternshipList().size());
 
         Internship internship = model.getFilteredInternshipList().get(targetIndex.getZeroBased());
-        final String[] splitName = internship.getName().fullName.split("\\s+");
+        final String[] splitName = internship.getCompany().company.split("\\s+");
         model.updateFilteredInternshipList(new NameContainsKeywordsPredicate(Arrays.asList(splitName[0])));
 
         assertEquals(1, model.getFilteredInternshipList().size());

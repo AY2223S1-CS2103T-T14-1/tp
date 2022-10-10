@@ -50,7 +50,7 @@ public class InternshipCard extends UiPart<Region> {
         super(FXML);
         this.internship = internship;
         id.setText(displayedIndex + ". ");
-        name.setText(internship.getName().fullName);
+        name.setText(internship.getCompany().company);
         phone.setText(internship.getPhone().value);
         address.setText(internship.getAddress().value);
         applicationStatus.setText(internship.getApplicationStatus().toString());
