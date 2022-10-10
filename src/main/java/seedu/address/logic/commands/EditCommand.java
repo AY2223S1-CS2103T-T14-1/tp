@@ -1,7 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_APPLIED_DATE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_COMPANY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LINK;
@@ -19,7 +19,7 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.internship.Address;
+import seedu.address.model.internship.AppliedDate;
 import seedu.address.model.internship.ApplicationStatus;
 import seedu.address.model.internship.Email;
 import seedu.address.model.internship.Internship;
@@ -41,7 +41,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_COMPANY + "NAME] "
             + "[" + PREFIX_LINK + "PHONE] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
-            + "[" + PREFIX_ADDRESS + "ADDRESS] "
+            + "[" + PREFIX_APPLIED_DATE + "ADDRESS] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_LINK + "91234567 "
@@ -98,12 +98,12 @@ public class EditCommand extends Command {
         Company updatedCompany = editInternshipDescriptor.getCompany().orElse(internshipToEdit.getCompany());
         Link updatedLink = editInternshipDescriptor.getLink().orElse(internshipToEdit.getLink());
         Email updatedEmail = editInternshipDescriptor.getEmail().orElse(internshipToEdit.getEmail());
-        Address updatedAddress = editInternshipDescriptor.getAddress().orElse(internshipToEdit.getAddress());
+        AppliedDate updatedAppliedDate = editInternshipDescriptor.getAppliedDate().orElse(internshipToEdit.getAppliedDate());
         ApplicationStatus updatedApplicationStatus =
                 editInternshipDescriptor.getApplicationStatus().orElse(internshipToEdit.getApplicationStatus());
         Set<Tag> updatedTags = editInternshipDescriptor.getTags().orElse(internshipToEdit.getTags());
 
-        return new Internship(updatedCompany, updatedLink, updatedEmail, updatedApplicationStatus, updatedAddress,
+        return new Internship(updatedCompany, updatedLink, updatedEmail, updatedApplicationStatus, updatedAppliedDate,
                 updatedTags);
     }
 
@@ -133,7 +133,7 @@ public class EditCommand extends Command {
         private Company company;
         private Link link;
         private Email email;
-        private Address address;
+        private AppliedDate appliedDate;
         private ApplicationStatus applicationStatus;
         private Set<Tag> tags;
 
@@ -147,7 +147,7 @@ public class EditCommand extends Command {
             setCompany(toCopy.company);
             setLink(toCopy.link);
             setEmail(toCopy.email);
-            setAddress(toCopy.address);
+            setAppliedDate(toCopy.appliedDate);
             setApplicationStatus(toCopy.applicationStatus);
             setTags(toCopy.tags);
         }
@@ -156,7 +156,7 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(company, link, email, address, tags);
+            return CollectionUtil.isAnyNonNull(company, link, email, appliedDate, tags);
         }
 
         public void setCompany(Company company) {
@@ -183,12 +183,12 @@ public class EditCommand extends Command {
             return Optional.ofNullable(email);
         }
 
-        public void setAddress(Address address) {
-            this.address = address;
+        public void setAppliedDate(AppliedDate appliedDate) {
+            this.appliedDate = appliedDate;
         }
 
-        public Optional<Address> getAddress() {
-            return Optional.ofNullable(address);
+        public Optional<AppliedDate> getAppliedDate() {
+            return Optional.ofNullable(appliedDate);
         }
 
         public void setApplicationStatus(ApplicationStatus applicationStatus) {
@@ -234,7 +234,7 @@ public class EditCommand extends Command {
             return getCompany().equals(e.getCompany())
                     && getLink().equals(e.getLink())
                     && getEmail().equals(e.getEmail())
-                    && getAddress().equals(e.getAddress())
+                    && getAppliedDate().equals(e.getAppliedDate())
                     && getApplicationStatus().equals(e.getApplicationStatus())
                     && getTags().equals(e.getTags());
         }

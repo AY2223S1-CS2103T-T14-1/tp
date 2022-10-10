@@ -52,7 +52,7 @@ public class InternshipCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         name.setText(internship.getCompany().company);
         phone.setText(internship.getLink().value);
-        address.setText(internship.getAddress().value);
+        address.setText(internship.getAppliedDate().value);
         applicationStatus.setText(internship.getApplicationStatus().toString());
         email.setText(internship.getEmail().value);
         internship.getTags().stream()

@@ -2,7 +2,7 @@ package seedu.address.logic.commands;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_APPLIED_DATE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_COMPANY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LINK;
@@ -45,15 +45,15 @@ public class CommandTestUtil {
     public static final String PHONE_DESC_TIKTOK = " " + PREFIX_LINK + VALID_PHONE_TIKTOK;
     public static final String EMAIL_DESC_GOOGLE = " " + PREFIX_EMAIL + VALID_EMAIL_GOOGLE;
     public static final String EMAIL_DESC_TIKTOK = " " + PREFIX_EMAIL + VALID_EMAIL_TIKTOK;
-    public static final String ADDRESS_DESC_GOOGLE = " " + PREFIX_ADDRESS + VALID_ADDRESS_GOOGLE;
-    public static final String ADDRESS_DESC_TIKTOK = " " + PREFIX_ADDRESS + VALID_ADDRESS_TIKTOK;
+    public static final String ADDRESS_DESC_GOOGLE = " " + PREFIX_APPLIED_DATE + VALID_ADDRESS_GOOGLE;
+    public static final String ADDRESS_DESC_TIKTOK = " " + PREFIX_APPLIED_DATE + VALID_ADDRESS_TIKTOK;
     public static final String TAG_DESC_FRIEND = " " + PREFIX_TAG + VALID_TAG_FRIEND;
     public static final String TAG_DESC_HUSBAND = " " + PREFIX_TAG + VALID_TAG_HUSBAND;
 
     public static final String INVALID_NAME_DESC = " " + PREFIX_COMPANY + "James&"; // '&' not allowed in names
     public static final String INVALID_PHONE_DESC = " " + PREFIX_LINK + "911a"; // 'a' not allowed in phones
     public static final String INVALID_EMAIL_DESC = " " + PREFIX_EMAIL + "bob!yahoo"; // missing '@' symbol
-    public static final String INVALID_ADDRESS_DESC = " " + PREFIX_ADDRESS; // empty string not allowed for addresses
+    public static final String INVALID_ADDRESS_DESC = " " + PREFIX_APPLIED_DATE; // empty string not allowed for addresses
     public static final String INVALID_TAG_DESC = " " + PREFIX_TAG + "hubby*"; // '*' not allowed in tags
 
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
