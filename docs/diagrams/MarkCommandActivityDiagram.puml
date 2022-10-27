@@ -1,5 +1,4 @@
 @startuml
-scale 1.2
 start
 :User executes Mark command;
 :MarkCommandParser parses argument;
