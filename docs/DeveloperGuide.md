@@ -116,7 +116,7 @@ How the parsing works:
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2223S1-CS2103T-T14-1/tp/blob/master/src/main/java/seedu/address/model/Model.java)
 
-<img src="images/ModelClassDiagram.png" width="550" />
+<img src="images/ModelClassDiagram.png" width="600" />
 
 
 The `Model` component,
@@ -128,7 +128,7 @@ The `Model` component,
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `FindMyIntern`, which `Internship` references. This allows `FindMyIntern` to only require one `Tag` object per unique tag, instead of each `Internship` needing their own `Tag` objects.<br>
 
-<img src="images/BetterModelClassDiagram.png" width="550" />
+<img src="images/BetterModelClassDiagram.png" width="600" />
 
 </div>
 
@@ -172,7 +172,7 @@ When `execute` of `AddCommand` is run, the `Internship` is passed into the model
 
 The following activity diagram summarizes what happens when a user executes an add command:
 
-<img src="images/AddCommandActivityDiagram.png" width="500" />
+<img src="images/AddCommandActivityDiagram.png" width="520" />
 
 #### Design Considerations
 
@@ -249,7 +249,7 @@ When `execute` of `MarkCommand` is run, a new `Internship` object with the updat
 
 The following activity diagram summarizes what happens when a user executes a mark command.
 
-<img src="images/MarkCommandActivityDiagram.png" width="500" />
+<img src="images/MarkCommandActivityDiagram.png" width="520" />
 
 
 #### Design Considerations
